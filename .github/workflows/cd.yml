@@ -1,0 +1,24 @@
+name: CD
+on:
+  release:
+    types:
+      - published
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+      - uses: actions/setup-node@v2
+      - run: git config --global user.name "GitHub Actions"
+      - run: git config --global user.email "actions@users.noreply.github.com"
+      - run: npm ci
+      - run: npm test
+      - run: npm version `echo ${{ github.event.release.tag_name }} | sed 's|^v||'`
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: git push
+        env:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

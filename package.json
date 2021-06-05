@@ -1,0 +1,36 @@
+{
+  "name": "fortune-seedable-memory",
+  "version": "0.1.0",
+  "description": "Seedable in-memory adapter for Fortune.",
+  "main": "lib/index.js",
+  "type": "module",
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "node test"
+  },
+  "author": "Joe Bartlett <joe@redopop.com>",
+  "license": "Unlicense",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/redoPop/fortune-seedable-memory.git"
+  },
+  "keywords": [
+    "fortune",
+    "adapter"
+  ],
+  "bugs": {
+    "url": "https://github.com/redoPop/fortune-seedable-memory/issues"
+  },
+  "homepage": "https://github.com/redoPop/fortune-seedable-memory#readme",
+  "devDependencies": {
+    "eslint": "^7",
+    "fortune": "^5",
+    "tapdance": "^5"
+  },
+  "peerDependencies": {
+    "fortune": "^5"
+  }
+}
