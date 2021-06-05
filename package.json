@@ -1,6 +1,6 @@
 {
   "name": "fortune-seedable-memory",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Seedable in-memory adapter for Fortune.",
   "main": "lib/index.js",
   "type": "module",
